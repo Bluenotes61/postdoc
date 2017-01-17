@@ -1,0 +1,351 @@
+/**
+ * Main colors
+ * Blue:#5B889D
+ * Red:#BA5134;
+ * Green: #5D9954;
+ */
+
+
+/* 
+  Main elements 
+*/
+html, body { 
+  margin: 0; 
+  padding: 0; 
+  height: 100%;
+  background: #F2F7F9;
+}
+body, input, textarea, select {
+  color:#000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+h1,h2,h3 {
+  font-family: "Roboto Slab";
+  color:#63899C;
+}
+
+h1 { font-size: 200%; line-height:140%; font-weight: 700; margin: 0; }
+h2 { font-size: 190%; line-height:140%; font-weight: bold; margin: 0 0 10px 0; }
+h3 { font-size: 140%; line-height:140%; font-weight: normal; margin: 0; }
+h4,h5,h6 { font-size: 115%; line-height:140%; font-weight: bold; margin: 0; }
+
+p { margin: 0 0 6px 0; }
+a { color:#BA5134; cursor:pointer; text-decoration: none; outline: none; }
+a:hover { text-decoration: none; outline: none;}
+img { border: 0; outline: none; }
+ul {
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+input, textarea {
+  font:inherit;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+[contenteditable=true]:empty:before {
+  color:#aaa;
+  content: attr(placeholder);
+  display: block;
+}
+
+/*
+  General classes
+ */
+.row:after,
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.col, .floatleft {
+  float: left;
+}
+.col50 {
+  width:50%;
+  padding-left:20px;
+}
+.col20 {
+  width:20%;
+  padding-left:10px;
+}
+.col33 {
+  width:33.33333333333%;
+  padding-left:10px;
+}
+.col:first-child {
+  padding-left:0;
+}
+.floatright {
+  float: right;
+}
+.textright {
+  text-align: right;
+}
+.rtl {
+  direction:rtl;
+  text-align:right;
+}
+.digits_hide {
+  display:none;
+}
+body .ui-tooltip {
+  max-width: 700px;
+}
+
+/*
+  Button that is skinned for kliniker and initalized in master.js
+ */
+.button {
+  display: inline-block;
+  text-align:center;
+  color:#fff;
+  padding:10px 20px;
+  border:none;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+}
+.button.blue {
+  background-color: #5B889D;
+}
+.button.blue:hover {
+  background-color:#466A7A;
+}
+.button.red {
+  background-color:#BA5134;
+}
+.button.red:hover {
+  background-color: #993D26;  
+}
+
+.button.inactive {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  -moz-opacity: 0.3;
+  -khtml-opacity: 0.3;
+  opacity: 0.3;
+  cursor: default;
+}
+.button.big {
+  display: block;
+}
+.button.small {
+  padding:5px 10px;
+  font-size: 90%;
+  font-weight: normal;
+}
+
+.button.icon {
+  padding-left:40px;
+  background-repeat:no-repeat;
+  background-position: 10px center;
+  background-size: 20px auto;
+}
+.button.icon.open {
+  background-image: url(../../gfx/icons/open.svg);
+}
+.button.icon.create {
+  background-image: url(../../gfx/icons/create.svg);
+}
+.button.icon.edit {
+  background-image: url(../../gfx/icons/edit.svg);
+}
+.button.icon.save {
+  background-image: url(../../gfx/icons/save.svg);
+}
+.button.icon.cancel {
+  background-image: url(../../gfx/icons/cancel.svg);
+}
+.button.icon.delete {
+  background-image: url(../../gfx/icons/trash.svg);
+}
+.button.icon.print {
+  background-image: url(../../gfx/icons/print.svg);
+}
+
+.button.icon.small {
+  padding-left:30px;
+  background-size: 12px auto;
+}
+
+.button.hollow {
+  background-color: #fff;
+  padding:10px 40px;
+}
+.button.hollow.red {
+  color:#ba5134;
+  border: solid 2px #ba5134;
+}
+.button.hollow.red:hover {
+  background-color: #ba5134;
+  color:#fff;
+}
+.button.hollow.icon.save {
+  background-image: url(../../gfx/icons/save-red.svg);
+}
+.button.hollow.icon.create {
+  background-image: url(../../gfx/icons/create-red.svg);
+}
+.button.hollow.icon.open {
+  background-image: url(../../gfx/icons/open-red.svg);
+}
+.button.hollow.icon.cancel {
+  background-image: url(../../gfx/icons/cancel-red.svg);
+}
+.button.hollow.icon.delete {
+  background-image: url(../../gfx/icons/trash-red.svg);
+}
+.button.hollow.icon.save:hover {
+  background-image: url(../../gfx/icons/save.svg);
+}
+.button.hollow.icon.create:hover {
+  background-image: url(../../gfx/icons/create.svg);
+}
+.button.hollow.icon.open:hover {
+  background-image: url(../../gfx/icons/open.svg);
+}
+.button.hollow.icon.cancel:hover {
+  background-image: url(../../gfx/icons/cancel.svg);
+}
+.button.hollow.icon.delete:hover {
+  background-image: url(../../gfx/icons/trash.svg);
+}
+
+
+
+
+/*
+  Inputs skinned as jquery.chosen elements
+ */
+textarea.chinp,
+input.chinp {
+  background-color: #FFFFFF;
+  border: 1px solid #5B889D;
+  color: #444444;
+  display: block;
+  overflow: hidden;
+  padding: 5px 8px;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+}
+textarea.chinp {
+  height: 50px;
+}
+
+
+/*
+  Focused elements in the inputarea. Skinned for kliniker
+ */
+
+/*
+  Basic input fields
+ */
+
+/*
+  jquery.autocomplete overrides
+ */
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; cursor: pointer;}
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #0050FF; }
+
+
+/*
+  jquery.chosen overrides
+ */
+.chosen-container a {
+  font-weight: normal;
+}
+.chosen-container-multi .chosen-choices {
+  background-color: #fff;
+/*  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #ffffff), color-stop(50%, #f6f6f6), color-stop(52%, #eeeeee), color-stop(100%, #f4f4f4));
+  background: -webkit-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: -moz-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: -o-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+*/  background-clip: padding-box;
+  box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  height:20px;
+  padding:0 5px;
+}
+
+/*
+  jquery.ui override for dateselector
+ */
+.ui-widget-header {
+  background:#2F7CAC;
+  color:#fff;
+  border:solid 1px #BFE7F3;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  color:#2F7CAC;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+  background:#2F7CAC;
+  color:#fff;
+  border:none;  
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+  background: #BFE7F3;
+  color:#2f7cac;
+  border:solid 1px #ccc;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+  background:#2F7CAC;
+  color:#fff;
+  border:none;  
+}
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon {
+  background-image: url("/js/tools/jquery-ui-1.11.4.custom/images/ui-icons_ffffff_256x240.png");
+}
+
+.toggle-button {
+  overflow: hidden;
+  font-size: 14px;
+  border:ridge 2px #fff;
+  border-radius: 10px;
+}
+.toggle-button div {
+  text-align: center;
+  cursor:pointer;
+  background: #ccc;
+  float: left;
+  width: 60px;
+  color:#999;
+  line-height: 150%;
+}
+.toggle-button div.yes:after {
+  content:"Aktiv";
+}
+.toggle-button div.no:after {
+  content:"Inaktiv";
+}
+.toggle-button div.no {
+  background: #D63E3E;
+  color:#fff;
+}
+.toggle-button.on div.yes {
+  background: #429343;
+  color:#fff;
+}
+.toggle-button.on div.no {
+  background: #ccc;
+  color:#999;
+}

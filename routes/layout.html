@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Postdoc AB</title>
+    <meta http-equiv='content-type' content='text/html; charset=utf-8;' />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />    
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="Postdoc">
+    <meta name="application-name" content="Postdoc">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/master.css" />
+
+    {% block css %}
+    {% endblock %}
+    <script src="https://use.typekit.net/juf7pou.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="/js/jquery-1.11.2.min.js"></script>
+    <script src="/js/start.js"></script>
+    {% block js %}
+    {% endblock %}
+
+  </head>
+  <body>
+    <div class='topbar'>
+      <div class='topbackground'></div>
+      <div class='topitems'>
+        <a class='logo' data-id='home'><img src='/gfx/postdoclogo_white.png' /></a>
+        <div class='menu'>
+          <a class='menuitem' data-id='patientbesked'>Patientbesked</a>
+          <a class='menuitem' data-id='minvardplan'>Min vårdplan</a>
+          <a class='menuitem' data-id='about'>Om oss</a>
+        </div>
+      </div>
+    </div>
+
+    <div class='background home'>
+      <div class='bgcontent'><div class='inner'>
+        <h1>Welcome</h1>
+        <p>Etiam tellus neque, laoreet sed mi id, auctor consequat mauris. In nibh velit; commodo sit amet est a, suscipit pharetra tellus. Donec quis hendrerit purus. Nulla iaculis tellus a nunc ultrices, sed ultricies mi varius. Maecenas blandit nulla nec elit ornare lacinia vel in tortor. In hac habitasse platea dictumst. Nam commodo elit vitae finibus ornare! Integer quis elementum justo. Curabitur pretium facilisis lectus sed feugiat. Nam scelerisque ante in dolor iaculis rutrum. Morbi porttitor diam congue diam eleifend, vitae suscipit est vehicula. Quisque congue erat id dolor euismod molestie. Morbi dapibus pretium eleifend. Donec dolor quam; ultrices at turpis vel; fringilla gravida lectus? Sed ultricies vel purus gravida venenatis. Morbi vel enim imperdiet, molestie ante ac; efficitur ex.</p>
+        <p>Aliquam nec leo ac sapien rhoncus faucibus. Nullam tincidunt felis ligula, et volutpat ante iaculis quis! Sed vel dolor eros. Phasellus iaculis rutrum diam, vel imperdiet odio pulvinar quis. Ut vel sem nec tortor mollis egestas. Nam tristique libero dolor; quis posuere arcu faucibus nec. Vestibulum ipsum velit, tempus quis dolor id, molestie rutrum justo. Suspendisse eget est nec ex fermentum imperdiet et tincidunt nisl. Nulla convallis pharetra finibus. Nullam ultricies finibus sagittis. Cras venenatis diam a magna consequat vulputate. Etiam ac arcu cursus, vulputate justo in, interdum mauris. Maecenas ultrices lacus commodo nisl fermentum feugiat ac id nunc? Fusce eu rhoncus libero.</p>
+      </div></div>
+    </div>
+    <div class='background patientbesked'>
+      <div class='bgcontent'><div class='inner'>
+        Hallå
+      </div></div>
+    </div>
+    <div class='background minvardplan'>
+      <div class='bgcontent'><div class='inner'>
+        <h1>Patientbesked</h1>
+        <img class='screenshot' src="/gfx/screenshot1.png" />
+      </div></div>
+    </div>
+    <div class='background about'>
+      <div class='bgcontent'><div class='inner'>
+        Hallå
+      </div></div>
+    </div>
+    <div class='footer'>
+      FOOTER
+    </div>
+    
+    <div class='contentdiv'>
+
+      {% block content %}
+      {% endblock %}
+
+    </div>
+
+  </body>
+</html>
