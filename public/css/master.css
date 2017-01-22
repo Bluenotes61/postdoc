@@ -1,7 +1,59 @@
+html, body { 
+  margin: 0; 
+  padding: 0; 
+  height: 100%;
+  background: #F2F7F9;
+}
+body, input, textarea, select {
+  color:#000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+h1,h2,h3 {
+  font-family: "Roboto Slab";
+  color:#63899C;
+}
+
+h1 { font-size: 200%; line-height:140%; font-weight: 700; margin: 0; }
+h2 { font-size: 190%; line-height:100%; font-weight: bold; margin: 0 0 10px 0; }
+h3 { font-size: 140%; line-height:100%; font-weight: normal; margin: 0; }
+h4,h5,h6 { font-size: 115%; line-height:140%; font-weight: bold; margin: 0; }
+
+p { margin: 0 0 6px 0; }
+a { color:#BA5134; cursor:pointer; text-decoration: none; outline: none; }
+a:hover { text-decoration: none; outline: none;}
+img { border: 0; outline: none; }
+ul {
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+input, textarea {
+  font:inherit;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+
+
 .background {
   position: relative;
   min-height: 100%;
-  background:url(/gfx/background3.jpg) no-repeat center center;
+  background:no-repeat center center;
   background-attachment:fixed;
   background-size: cover;
   opacity: 1;
@@ -9,19 +61,19 @@
   overflow: hidden;
 }
 .home {
-  background-image:url(/gfx/background2.jpg);
-}
-.patientbesked {
-  background-image:url(/gfx/background.jpg);
-}
-.minvardplan {
-  background-image:url(/gfx/background4.jpg);
+  background-image: url(/gfx/background2.jpg);
 }
 .about {
-  background-image:url(/gfx/background5.jpg);
+  background-image: url(/gfx/background5.jpg);
+}
+.patientbesked {
+  background-image: url(/gfx/background.jpg);
+}
+.minvardplan {
+  background-image: url(/gfx/background4.jpg);
 }
 .contact {
-  background-image:url(/gfx/background6.jpg);
+  background-image: url(/gfx/background6.jpg);
 }
 
 .topbar {
@@ -39,12 +91,7 @@
   width: 100%;
   position: absolute;
   z-index: 0;
-
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5b889d+0,5b889d+100&0.8+0,0.8+95,0+100 */
-  background: -moz-linear-gradient(top,  rgba(91,136,157,0.9) 0%, rgba(91,136,157,0.9) 95%, rgba(91,136,157,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(91,136,157,0.9) 0%,rgba(91,136,157,0.9) 95%,rgba(9.topbar 1,136,157,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(91,136,157,0.9) 0%,rgba(91,136,157,0.9) 95%,rgba(91,136,157,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc5b889d', endColorstr='#005b889d',GradientType=0 ); /* IE6-9 */
+  background: rgba(91,136,157,0.9);
 }
 
 .topbar .topitems {
@@ -98,13 +145,25 @@
   font-size: 100%;
 }
 
+
+.bgcontent .title {
+  font-family: "Roboto Slab";
+  background:#5b889d;
+  font-size: 200%;
+  color:#fff;
+  font-weight: bold;
+  padding:20px 0;
+  text-align: center;
+
+}
+
+
 .bgcontent {
-  background:rgba(255, 255, 255, 0.95) url(/gfx/postdoclogo.png) no-repeat bottom 10px right 10px;
+  background:rgba(255, 255, 255, 0.90);
   background-size: 50px auto;
-  padding:2%;
+  padding-bottom:2%;
   position: absolute;
-  width:90%;
-  max-width: 1200px;
+  width:96%;
   margin:0 auto;
   left:0;
   right:0;
@@ -112,7 +171,13 @@
   transform: translateY(-50%);
 }
 .bgcontent .inner {
-  max-width: 1200px;
+  max-width: 1000px;
+  margin:0 auto;
+}
+.bgcontent.high {
+  position: relative;
+  margin:50px auto;
+  transform: none;
 }
 
 .bgcontent img.screenshot {
@@ -122,10 +187,12 @@
 
 .home .bgcontent {
   background-image: none;
+}
+.home .bgcontent .inner {
   max-width: 770px;
 }
 .home .logo {
-  height: 180px;
+  height: 250px;
   text-align: center;
 }
 .home .logo img {
@@ -133,7 +200,7 @@
 }
 .home .intro {
   font-family: "Roboto Slab";
-  color:#5B889D;
+  color:#B05039;
   font-size: 200%;
   line-height: 150%;
   font-weight: bold;
@@ -150,13 +217,30 @@
   margin-top: 20px;
 }
 .imglink {
-  display: inline-block;
-  width:30%;
-  margin-right: 20px;
+  display: block;
+  float: left;
+  width:32%;
+  margin-left: 2%;
   text-align: center;
+}
+.imglink:first-child {
+  margin-left:0;
+}
+.imglink h3 {
+  color:#B05039;
 }
 .imglink img {
   width: 100%;
+  margin-top:10px;
+  border:solid 2px #B05039;
+}
+.screenshot {
+  display: none;
+}
+.screenshot img {
+  margin-top:20px;
+  width: 100%;
+  border:solid 2px #44758C;
 }
 
 .scroller.back {
@@ -165,29 +249,23 @@
   display: inline-block;
   padding-left: 30px;
 }
-.screenshot img {
-  width: 100%;
-}
 
 .contact h2 {
-  background:url(/gfx/logo.png) no-repeat left center;
-  background-size: 40px auto;
-  padding-left:50px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .person {
   float:left;
-  width:49%;
+  width:33.33333%;
   text-align: center;
 }
 .person img {
-  width: 50%;
-}
-.claes {
-  margin-left:2%;
+  width: 70%;
 }
 .person .name {
   font-weight: bold;
   font-size: 120%;
 }
+
+.footer

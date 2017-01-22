@@ -15,6 +15,23 @@ function StartPage() {
       }, 1000);      
     });
 
+    $("a.imglink").on("click", function(){
+      $(this).parents(".bgcontent").addClass("high");
+      var src = $(this).find("img").attr("src");
+      var target = $(this).data("target");
+      $(target).html("<img src='" + src + "' />");
+      $(target).slideDown();
+    });
+
+    $(".screenshot").on("click", function(){
+      $(this).slideUp();
+    });
+
+    $(".bgcontent").each(function(){
+      if ($(this).outerHeight() + 100 > $(window).height())
+        $(this).addClass("high");
+    });
+
   }
 
   init();
