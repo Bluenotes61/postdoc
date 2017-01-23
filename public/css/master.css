@@ -8,7 +8,7 @@ body, input, textarea, select {
   color:#000;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
-  line-height: 150%;
+  line-height: 140%;
 }
 
 h1,h2,h3 {
@@ -17,13 +17,13 @@ h1,h2,h3 {
 }
 
 h1 { font-size: 200%; line-height:140%; font-weight: 700; margin: 0; }
-h2 { font-size: 190%; line-height:100%; font-weight: bold; margin: 0 0 10px 0; }
+h2 { font-size: 190%; line-height:100%; font-weight: bold; margin: 30px 0 10px 0; }
 h3 { font-size: 140%; line-height:100%; font-weight: normal; margin: 0; }
 h4,h5,h6 { font-size: 115%; line-height:140%; font-weight: bold; margin: 0; }
 
-p { margin: 0 0 6px 0; }
+p { margin: 0 0 12px 0; }
 a { color:#BA5134; cursor:pointer; text-decoration: none; outline: none; }
-a:hover { text-decoration: none; outline: none;}
+a:hover { text-decoration: none; outline: none; color:#9B422E;}
 img { border: 0; outline: none; }
 ul {
   margin:0;
@@ -38,6 +38,9 @@ input, textarea {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+*:first-child {
+  margin-top: 0;
 }
 
 .clearfix:after {
@@ -61,19 +64,19 @@ input, textarea {
   overflow: hidden;
 }
 .home {
-  background-image: url(/gfx/background2.jpg);
+  background-image: url(/gfx/backgrounds/home.jpg);
 }
 .about {
-  background-image: url(/gfx/background5.jpg);
+  background-image: url(/gfx/backgrounds/about.jpg);
 }
 .patientbesked {
-  background-image: url(/gfx/background.jpg);
+  background-image: url(/gfx/backgrounds/patientbesked.jpg);
 }
 .minvardplan {
-  background-image: url(/gfx/background4.jpg);
+  background-image: url(/gfx/backgrounds/minvardplan.jpg);
 }
 .contact {
-  background-image: url(/gfx/background6.jpg);
+  background-image: url(/gfx/backgrounds/contact.jpg);
 }
 
 .topbar {
@@ -154,39 +157,46 @@ input, textarea {
   font-weight: bold;
   padding:20px 0;
   text-align: center;
-
 }
-
 
 .bgcontent {
   background:rgba(255, 255, 255, 0.90);
   background-size: 50px auto;
-  padding-bottom:2%;
-  position: absolute;
+  position: relative;
   width:96%;
   margin:0 auto;
-  left:0;
-  right:0;
-  top: 53%;
-  transform: translateY(-50%);
+  max-width: 1200px;
+  margin:80px auto;
 }
 .bgcontent .inner {
-  max-width: 1000px;
+  padding:4%;
   margin:0 auto;
-}
-.bgcontent.high {
   position: relative;
-  margin:50px auto;
-  transform: none;
+}
+.bgcontent .inner .left {
+  float: left;
+  width: 74%;
+}
+.bgcontent .inner .right {
+  float: right;
+  width: 18%;
+}
+.bgcontent .inner .right h3 {
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .bgcontent img.screenshot {
   max-width: 80%;
 }
 
+.extlink {
+  font-size: 120%;
+  font-weight: bold;
+}
 
 .home .bgcontent {
-  background-image: none;
+  margin-top: 160px;
 }
 .home .bgcontent .inner {
   max-width: 770px;
@@ -213,29 +223,36 @@ input, textarea {
   font-size: 110%;
 }
 
-.imglinks {
-  margin-top: 20px;
-}
 .imglink {
   display: block;
-  float: left;
-  width:32%;
-  margin-left: 2%;
+  width:100%;
+  margin-bottom: 20px;
   text-align: center;
 }
-.imglink:first-child {
-  margin-left:0;
-}
-.imglink h3 {
-  color:#B05039;
+.imglink .image {
+  max-height: 100px;
+  overflow: hidden;
+  border:solid 2px #B05039;
 }
 .imglink img {
   width: 100%;
-  margin-top:10px;
-  border:solid 2px #B05039;
 }
 .screenshot {
   display: none;
+}
+.screenshot .header {
+  font-family: "Roboto Slab";
+  color:#63899C;
+  font-size: 170%;
+  float: left;
+}
+.screenshot .backlink {
+  display: block;
+  float: right;
+  width:30px;
+  height:30px;
+  background:url(/gfx/arrowup.svg) no-repeat center center;
+  background-size: 100% auto;
 }
 .screenshot img {
   margin-top:20px;
@@ -250,8 +267,8 @@ input, textarea {
   padding-left: 30px;
 }
 
-.contact h2 {
-  margin-bottom: 20px;
+.contact h3 {
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -268,4 +285,12 @@ input, textarea {
   font-size: 120%;
 }
 
-.footer
+.footer {
+  font-family: "Roboto Slab";
+  font-size: 120%;
+  color:#fff;
+  padding:20px;
+  background:#5b889d url(/gfx/logo_white.png) no-repeat 10px center;
+  background-size: auto 70%;
+  text-align: center;
+}

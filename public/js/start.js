@@ -16,20 +16,24 @@ function StartPage() {
     });
 
     $("a.imglink").on("click", function(){
-      $(this).parents(".bgcontent").addClass("high");
       var src = $(this).find("img").attr("src");
       var target = $(this).data("target");
-      $(target).html("<img src='" + src + "' />");
-      $(target).slideDown();
+      var header = $(this).find(".header").text();
+      $(target).find("img").attr("src", src);
+      $(target).find(".header").text(header);
+      $(target).slideDown(function(){
+        $('html, body').animate({
+          scrollTop: $(target).offset().top - 80
+        }, 500);      
+      });
     });
 
     $(".screenshot").on("click", function(){
+      var bg = $(this).parents(".background");
       $(this).slideUp();
-    });
-
-    $(".bgcontent").each(function(){
-      if ($(this).outerHeight() + 100 > $(window).height())
-        $(this).addClass("high");
+      $('html, body').animate({
+        scrollTop: bg.offset().top
+      }, 500);      
     });
 
   }
