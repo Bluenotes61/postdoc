@@ -8,11 +8,16 @@ function StartPage() {
         $(".topbar").removeClass("small");
     });
 
+    $(".topitems .hamburger").on("click", function(){
+      $(".topitems .hamburgeritems").slideToggle();
+    });
+
     $("a.scroller").on("click", function(){
       var id = $(this).data("id");
       $('html, body').animate({
         scrollTop: $("." + id).offset().top
       }, 1000);      
+      $(".topitems .hamburgeritems").slideUp();
     });
 
     $("a.imglink").on("click", function(){
