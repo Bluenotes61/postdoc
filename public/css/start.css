@@ -226,9 +226,7 @@ input, textarea {
 
 .home .bgcontent {
   margin-top: 160px;
-}
-.home .bgcontent .inner {
-  max-width: 770px;
+  max-width: 920px;
 }
 .home .logo {
   height: 250px;
@@ -353,6 +351,10 @@ input, textarea {
 
 
 @media(max-width: 600px) {
+ .background {
+    background-attachment:scroll;
+  }
+
   .topbar .menu {
     display: none;
   }

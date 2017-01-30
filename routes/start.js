@@ -5,6 +5,7 @@ var Q = require("q");
 
 exports.index = function(req, res) {
   res.render("start", { 
+    language:"en"
   });
 };
 

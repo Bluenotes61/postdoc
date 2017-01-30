@@ -30,28 +30,50 @@
       <div class='topbackground'></div>
       <div class='topitems'>
         <a class='logo scroller' data-id='home'></a>
-        <div class='menu'>
-          <a class='menuitem scroller' data-id='about'>What we do</a>
-          <a class='menuitem scroller' data-id='patientbesked'>Patientbesked</a>
-          <a class='menuitem scroller' data-id='minvardplan'>Min vårdplan</a>
-          <a class='menuitem scroller' data-id='contact'>Who we are</a>
-        </div>
-        <div class='hamburgermenu'>
-          <a class='hamburger'></a>
-          <div class='hamburgeritems'>
+        {% if language == "en" %}
+          <div class='menu'>
             <a class='menuitem scroller' data-id='about'>What we do</a>
             <a class='menuitem scroller' data-id='patientbesked'>Patientbesked</a>
             <a class='menuitem scroller' data-id='minvardplan'>Min vårdplan</a>
             <a class='menuitem scroller' data-id='contact'>Who we are</a>
           </div>
-        </div>
+          <div class='hamburgermenu'>
+            <a class='hamburger'></a>
+            <div class='hamburgeritems'>
+              <a class='menuitem scroller' data-id='about'>What we do</a>
+              <a class='menuitem scroller' data-id='patientbesked'>Patientbesked</a>
+              <a class='menuitem scroller' data-id='minvardplan'>Min vårdplan</a>
+              <a class='menuitem scroller' data-id='contact'>Who we are</a>
+            </div>
+          </div>
+        {% else %}
+          <div class='menu'>
+            <a class='menuitem scroller' data-id='about'>Vad vi gör</a>
+            <a class='menuitem scroller' data-id='patientbesked'>Patientbesked</a>
+            <a class='menuitem scroller' data-id='minvardplan'>Min vårdplan</a>
+            <a class='menuitem scroller' data-id='contact'>Vem vi är</a>
+          </div>
+          <div class='hamburgermenu'>
+            <a class='hamburger'></a>
+            <div class='hamburgeritems'>
+              <a class='menuitem scroller' data-id='about'>Vad vi gör</a>
+              <a class='menuitem scroller' data-id='patientbesked'>Patientbesked</a>
+              <a class='menuitem scroller' data-id='minvardplan'>Min vårdplan</a>
+              <a class='menuitem scroller' data-id='contact'>Vem vi är</a>
+            </div>
+          </div>
+        {% endif %}
       </div>
     </div>
 
     <div class='background home'>
       <div class='bgcontent'><div class='inner'>
         <div class='logo'><img src="/gfx/postdoclogo.png" alt='Postdoc' /></div>
-        <div class='intro'>Helping healthcare to provide relevant and adapted information to patients<br /> &mdash; with minimum workload</a>.</div>
+        {% if language == "en" %}
+          <div class='intro'>Relevant and adapted information to patients<br /> &mdash; with minimum workload</a>.</div>
+        {% else %}
+          <div class='intro'>Relevant och anpassad information till patienter<br /> &mdash; med minimal arbetsinsats</a>.</div>
+        {% endif %}
       </div></div>
     </div>
     <div class='background about'>
@@ -59,12 +81,12 @@
         <div class='title'>What we do</div>
         <div class='inner'>
           <h2>The patient information challenge</h2>
-          <p>After or during medical treatment, e.g. after surgery or during cancer treatment, patients get a lot of information about their treatment from their doctor and from other healthcare professionals. But most of this information is given <span class='highlight'>verbally</span> and can be hard to remember for a patient when at home. It is therefore crucial, and in some cases required by the authorities, that <span class='highlight'>written information</span> about the treatment is provided to the patient.</p>
-          <p>However, healthcare professionals usually do not have the <span class='highlight'>time and resources</span> to produce relevant and adapted written information. If written information is at all provided, it is often either sparse or very general.</p>
+          <p>After or during medical treatment, e.g. after surgery or during cancer treatment, patients get a lot of information about their treatment from their doctor and from other healthcare professionals. But most of this information is given <span class='highlight'>verbally</span> and is <span class='highlight'>hard to remember</span> for the patient when at home. If written information is provided, it is often either sparse or very general.</p>
+          <p>It is crucial, and in some cases required by the authorities, that <span class='highlight'>written information</span> about the treatment is provided to the patient. But healthcare do not have the <span class='highlight'>time and resources</span> to produce relevant written information, adapted for the specific case.</p>
           <h2>Our solution</h2>
-          <p>Our solution to this problem is our applications <a class='scroller' data-id='patientbesked'>Patientbesked</a> and <a class='scroller' data-id='minvardplan'>Min vårdplan</a>. With these applications, a healthcare professional, usually a nurse, can produce <span class='highlight'>relevant</span> and reviewed <span class='highlight'>information</span>, <span class='highlight'>adapted</span> to the individual case, with a <span class='highlight'>minimum workload</span>.</p>
-          <p>Both applications are based on a <span class='highlight'>template engine</span>, developed by Postdoc. The template entities are interlinked, which enables a nurse to create a patient information in around <span class='highlight'>30 seconds</span>.</p>
-          <p>The patient receives the information printed in paper form and can also access it online.</p>
+          <p>Our solution to this problem is our applications <a class='scroller' data-id='patientbesked'>Patientbesked</a> and <a class='scroller' data-id='minvardplan'>Min vårdplan</a>. Both applications are based on a <span class='highlight'>template engine</span> with interlinked information templates. The template information is created and maintained by medical expertise at each clinic.</p>
+          <p>A healthcare professional, usually a nurse, can pick and choose among the templates and combine them into a <span class='highlight'>relevant</span> and reviewed <span class='highlight'>information</span>, <span class='highlight'>adapted</span> to the individual case. All in around with <span class='highlight'>30 seconds</span>.</p>
+          <p>The patient receives a printed version of the information when leaving the hospital and can also access the latest version of the information online.</p>
           <p><a class='scroller' data-id='patientbesked'>Patientbesked</a> is used to provide information after institutional and non-institutional care, e.g. after surgery, while <a class='scroller' data-id='minvardplan'>Min vårdplan</a> is used to produce individual care plans during cancer treatment.</p>
         </div>
       </div>
@@ -77,11 +99,10 @@
             <div class='left'>
               <p><a href='http://patientbesked.se' class='extlink' target='_blank'>patientbesked.se</a></p>
               <p>Patientbesked is used to generate <span class='highlight'>patient information</span> after institutional and non-institutional care.</p>
-              <p>The application is based on a <span class='highlight'>template engine</span> where the template entities are interlinked. 
-              The basic template entities include medical information about the diagnosis and various contact information. 
-              However, the template engine is very flexible and can be <span class='highlight'>customized</span> at each clinic. Template entities like self care, information about return visits etc. can be added and linked to the diagnosis entity.</p>
-              <p>Each clinic has its own set of templates and the template information is created and maintained by medical expertise at the clinic.</p>
-              <p>When creating a patient information, a nurse can pick and choose among the templates, and combine them into a relevant information, adapted for the specific case, in around <span class='highlight'>30 seconds</span>.</p>
+              <p>The application is based on a <span class='highlight'>template engine</span> and the basic information templates include medical information about the diagnosis and various contact information. 
+              However, the template engine is very flexible and can be <span class='highlight'>customized</span> at each clinic. Information templates like self care, information about return visits etc. can be added and linked to the diagnosis information template.</p>
+              <p>Each clinic has its own set of templates and the template information is created and maintained by medical expertise at each clinic.</p>
+              <p>When creating a patient information, a nurse can pick and choose among the templates and combine them into a relevant information, adapted for the specific case, in around <span class='highlight'>30 seconds</span>.</p>
               <p>Patientbesked has been in use since 2012 at the following hospitals:<br>Länssjukhuset i Kalmar, Hallands sjukhus, Skånes universitetssjukhus, Blekingesjukhuset and Centrallasarettet Växjö.</p>
               <p>During 2016 almost <span class='highlight'>9000</span> patients were provided with information generated by Patientbesked.</p>
             </div>  
@@ -110,7 +131,7 @@
               <p><a href='http://minvardplan.se' class='extlink' target='_blank'>minvardplan.se</a></p>
               <p>Min vårdplan is used to create <span class='highlight'>individual care plans</span> for patients undergoing cancer treatment. Care plans can be generated both for the investigation phase and the treatment phase, and the contents of the created care plans follow the guidelines given by SKL and RCC.</p>
               <p>The application is based on the <span class='highlight'>template engine</span> developed for <a class='scroller' data-id='patientbesked'>Patientbesked</a>, and medical expertise at each clinic create and maintain the template information. The information includes <span class='highlight'>medical information</span>, various contact information and a <span class='highlight'>timeline</span> for the planned treatment.</p>
-              <p>The created care plans are living documents and can be updated at any time when the conditions change. Patients can access their care plans online and also update certain areas concering their health status. This provides healthcare with important information about the patient's health condition.</p>
+              <p>The created care plans are living documents and can be updated at any time when the conditions change. Patients can access their care plans online and also update certain areas concerning their health status. This provides healthcare with important information about the patient's health condition.</p>
               <p>Since mid January 2017 a pilot project is running at Blekingesjukhuset, where Min vårdplan is used to create care plans for cancer patients. Initially all colorectal cancer patients at the hospital will be included in the pilot project. This will subsequently be extended to other cancer diagnoses.</p>
             </div>  
             <div class='right'>
@@ -133,7 +154,7 @@
       <div class='bgcontent'>
         <div class='title'>Who we are</div>
         <div class='inner'>
-          <h3>Please contact us for more information or for a demonstration our applications.</h3>
+          <h3>Please contact us for more information or for a demonstration of our applications.</h3>
           <div class='clearfix'>
             <div class='magnus person'>
               <img src="/gfx/Magnus.png" />
