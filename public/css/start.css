@@ -161,6 +161,13 @@ input, textarea {
 .topbar a.menuitem:hover {
   background: #5b889d;
 }
+.topbar .menu a.menuitem.language {
+  display: block;
+  position: absolute;
+  right:0;
+  top:0;
+  font-size: 100%;
+}
 
 .topbar.small .topbackground {
   background: #5b889d;
@@ -330,12 +337,13 @@ input, textarea {
   .topbar {
     height:40px;
   }
-  .topbar .topitems a {
+  .topbar .topitems .menu a {
     height: 40px;
     line-height: 40px; 
   }
-  .topbar a.menuitem {
+  .topbar .menu a.menuitem {
     font-size: 100%;
+    padding:0 10px;
   }
 
   .home .bgcontent {
@@ -344,13 +352,6 @@ input, textarea {
 }
 
 @media(max-width: 700px) {
-  .topbar .menu a.menuitem {
-    padding: 0 6px;
-  }
-}
-
-
-@media(max-width: 600px) {
  .background {
     background-attachment:scroll;
   }

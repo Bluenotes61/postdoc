@@ -23,6 +23,8 @@
     <link rel="stylesheet" type="text/css" href="css/start.css" />
 
     <script src="/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/nodebase/js/tools/q.js"></script>
+    <script type="text/javascript" src="/nodebase/js/tools/ajax.js"></script>
     <script src="/js/start.js"></script>
   </head>
   <body>
@@ -36,6 +38,7 @@
             <a class='menuitem scroller' data-id='patientbesked'>Patientbesked</a>
             <a class='menuitem scroller' data-id='minvardplan'>Min vårdplan</a>
             <a class='menuitem scroller' data-id='contact'>Who we are</a>
+            <a class='language menuitem' data-language='sv'>Svenska</a>
           </div>
           <div class='hamburgermenu'>
             <a class='hamburger'></a>
@@ -44,6 +47,7 @@
               <a class='menuitem scroller' data-id='patientbesked'>Patientbesked</a>
               <a class='menuitem scroller' data-id='minvardplan'>Min vårdplan</a>
               <a class='menuitem scroller' data-id='contact'>Who we are</a>
+              <a class='language menuitem' data-language='sv'>Svenska</a>
             </div>
           </div>
         {% else %}
@@ -52,6 +56,7 @@
             <a class='menuitem scroller' data-id='patientbesked'>Patientbesked</a>
             <a class='menuitem scroller' data-id='minvardplan'>Min vårdplan</a>
             <a class='menuitem scroller' data-id='contact'>Vem vi är</a>
+            <a class='language menuitem' data-language='en'>English</a>
           </div>
           <div class='hamburgermenu'>
             <a class='hamburger'></a>
@@ -60,6 +65,7 @@
               <a class='menuitem scroller' data-id='patientbesked'>Patientbesked</a>
               <a class='menuitem scroller' data-id='minvardplan'>Min vårdplan</a>
               <a class='menuitem scroller' data-id='contact'>Vem vi är</a>
+              <a class='language menuitem' data-language='en'>English</a>
             </div>
           </div>
         {% endif %}
@@ -78,17 +84,31 @@
     </div>
     <div class='background about'>
       <div class='bgcontent'>
-        <div class='title'>What we do</div>
-        <div class='inner'>
-          <h2>The patient information challenge</h2>
-          <p>After or during medical treatment, e.g. after surgery or during cancer treatment, patients get a lot of information about their treatment from their doctor and from other healthcare professionals. But most of this information is given <span class='highlight'>verbally</span> and is <span class='highlight'>hard to remember</span> for the patient when at home. If written information is provided, it is often either sparse or very general.</p>
-          <p>It is crucial, and in some cases required by the authorities, that <span class='highlight'>written information</span> about the treatment is provided to the patient. But healthcare do not have the <span class='highlight'>time and resources</span> to produce relevant written information, adapted for the specific case.</p>
-          <h2>Our solution</h2>
-          <p>Our solution to this problem is our applications <a class='scroller' data-id='patientbesked'>Patientbesked</a> and <a class='scroller' data-id='minvardplan'>Min vårdplan</a>. Both applications are based on a <span class='highlight'>template engine</span> with interlinked information templates. The template information is created and maintained by medical expertise at each clinic.</p>
-          <p>A healthcare professional, usually a nurse, can pick and choose among the templates and combine them into a <span class='highlight'>relevant</span> and reviewed <span class='highlight'>information</span>, <span class='highlight'>adapted</span> to the individual case. All in around with <span class='highlight'>30 seconds</span>.</p>
-          <p>The patient receives a printed version of the information when leaving the hospital and can also access the latest version of the information online.</p>
-          <p><a class='scroller' data-id='patientbesked'>Patientbesked</a> is used to provide information after institutional and non-institutional care, e.g. after surgery, while <a class='scroller' data-id='minvardplan'>Min vårdplan</a> is used to produce individual care plans during cancer treatment.</p>
-        </div>
+        {% if language == "en" %}
+          <div class='title'>What we do</div>
+          <div class='inner'>
+            <h2>The patient information challenge</h2>
+            <p>After or during medical treatment, e.g. after surgery or during cancer treatment, patients get a lot of information about their treatment from their doctor and from other healthcare professionals. But most of this information is given <span class='highlight'>verbally</span> and is <span class='highlight'>hard to remember</span> for the patient when at home. If written information is provided, it is often either sparse or very general.</p>
+            <p>It is crucial, and in some cases required by the authorities, that <span class='highlight'>written information</span> about the treatment is provided to the patient. But healthcare do not have the <span class='highlight'>time and resources</span> to produce relevant written information, adapted for the specific case.</p>
+            <h2>Our solution</h2>
+            <p>Our solution to this problem is our applications <a class='scroller' data-id='patientbesked'>Patientbesked</a> and <a class='scroller' data-id='minvardplan'>Min vårdplan</a>. Both applications are based on a <span class='highlight'>template engine</span> with interlinked information templates. The template information is created and maintained by medical expertise at each clinic.</p>
+            <p>A healthcare professional, usually a nurse, can pick and choose among the templates and combine them into a <span class='highlight'>relevant</span> and reviewed <span class='highlight'>information</span>, <span class='highlight'>adapted</span> to the individual case. All in around with <span class='highlight'>30 seconds</span>.</p>
+            <p>The patient receives a printed version of the information when leaving the hospital and can also access the latest version of the information online.</p>
+            <p><a class='scroller' data-id='patientbesked'>Patientbesked</a> is used to provide information after institutional and non-institutional care, e.g. after surgery, while <a class='scroller' data-id='minvardplan'>Min vårdplan</a> is used to produce individual care plans during cancer treatment.</p>
+          </div>
+        {% else %}
+          <div class='title'>Vad vi gör</div>
+          <div class='inner'>
+            <h2>Utmaningen med patientinformation</h2>
+            <p>Efter eller under medicinsk behandling, t.ex. efter en operation eller i samband med cancerbehandling, får patienten mycket information från läkare och annan vårdpersonal. Men största delen av denna information ges <span class='highlight'>muntligen</span> och kan vara <span class='highlight'>svår att komma ihåg</span> då patienten kommit hem. Den skriftliga information som ges till patienten är ofta sparsam eller väldigt generell.</p>
+            <p>Av denna anledning är relevant och anpassad <span class='highlight'>skriftlig patientinformation</span> av stort värde och att detta ges till patienten är också ett krav i vissa landsting och regioner. Men sjukvården har sällan <span class='highlight'>tid och resurser</span> att skapa relevant skriftlig information, anpassad för det specifika fallet.</p>
+            <h2>Vår lösning</h2>
+            <p>Vår lösning till detta problem är våra applikationer <a class='scroller' data-id='patientbesked'>Patientbesked</a> och <a class='scroller' data-id='minvardplan'>Min vårdplan</a>. Båda dessa applikationer baseras på en <span class='highlight'>mallfunktionaliet</span> med korslänkade informationsmallar. Mallinformationen skapas och underhålls av medicinsk expertis vid varje klinik.</p>
+            <p>Vårdpersonal, vanligtvis en sjuksköterska, kan med några musklick välja bland mallinformationen och kombinera ihop en <span class='highlight'>relevant information</span>, anpassad till det specifika fallet. Allt inom loppet av runt <span class='highlight'>30 sekunder</span>.</p>
+            <p>Patienten får en utskriven version av informationen i samband med utskrivning och kan också få åtkomst till den aktuella versionen av informationen online.</p>
+            <p><a class='scroller' data-id='patientbesked'>Patientbesked</a> kan t.ex. användas för att ge patientinformation efter slutenvård eller polikliniska operationer, medan <a class='scroller' data-id='minvardplan'>Min vårdplan</a> används för att skapa individuella vårdplaner i samband med cancerbehandling.</p>
+          </div>
+        {% endif %}
       </div>
     </div>
     <div class='background patientbesked'>
@@ -97,19 +117,35 @@
         <div class='inner'>
           <div class='clearfix'>
             <div class='left'>
-              <p><a href='http://patientbesked.se' class='extlink' target='_blank'>patientbesked.se</a></p>
-              <p>Patientbesked is used to generate <span class='highlight'>patient information</span> after institutional and non-institutional care.</p>
-              <p>The application is based on a <span class='highlight'>template engine</span> and the basic information templates include medical information about the diagnosis and various contact information. 
-              However, the template engine is very flexible and can be <span class='highlight'>customized</span> at each clinic. Information templates like self care, information about return visits etc. can be added and linked to the diagnosis information template.</p>
-              <p>Each clinic has its own set of templates and the template information is created and maintained by medical expertise at each clinic.</p>
-              <p>When creating a patient information, a nurse can pick and choose among the templates and combine them into a relevant information, adapted for the specific case, in around <span class='highlight'>30 seconds</span>.</p>
-              <p>Patientbesked has been in use since 2012 at the following hospitals:<br>Länssjukhuset i Kalmar, Hallands sjukhus, Skånes universitetssjukhus, Blekingesjukhuset and Centrallasarettet Växjö.</p>
-              <p>During 2016 almost <span class='highlight'>9000</span> patients were provided with information generated by Patientbesked.</p>
+              {% if language == "en" %}
+                <p><a href='http://patientbesked.se' class='extlink' target='_blank'>patientbesked.se</a></p>
+                <p>Patientbesked is used to generate <span class='highlight'>patient information</span> after institutional and non-institutional care.</p>
+                <p>The application is based on a <span class='highlight'>template engine</span> and the basic information templates include medical information about the diagnosis and various contact information. 
+                However, the template engine is very flexible and can be <span class='highlight'>customized</span> at each clinic. Information templates like self care, information about return visits etc. can be added and linked to the diagnosis information template.</p>
+                <p>Each clinic has its own set of templates and the template information is created and maintained by medical expertise at each clinic.</p>
+                <p>When creating a patient information, a nurse can pick and choose among the templates and combine them into a relevant information, adapted for the specific case, in around <span class='highlight'>30 seconds</span>.</p>
+                <p>Patientbesked has been in use since 2012 at the following hospitals:<br>Länssjukhuset i Kalmar, Hallands sjukhus, Skånes universitetssjukhus, Blekingesjukhuset and Centrallasarettet Växjö.</p>
+                <p>During 2016 almost <span class='highlight'>9000</span> patients were provided with information generated by Patientbesked.</p>
+              {% else %}
+                <p><a href='http://patientbesked.se' class='extlink' target='_blank'>patientbesked.se</a></p>
+                <p>Patientbesked används för att ge patientinformation efter slutenvård eller polikliniska operationer</p>
+                <p>Applikationen baseras på en <span class='highlight'>mallfunktionslitet</span> med informationsmallar och där den grundläggande informationen inkluderar diagnosinformation och diverse kontaktinformation. Men mallfunktionaliteten är mycket flexibel och kan <span class='highlight'>anpassas</span> vid varje klinik. Informationsmallar med t.ex. information om egenvård, återbesök, sårskötsel etc. kan läggas till och kopplas till respektive diagnos.</p>
+                <p>Varje klinik har sin egen mallinformation, vilken skapas och underhålls av medicinsk expertis vid kliniken.</p>
+                <p>En information skapas på runt <span class='highlight'>customized</span>30 sekunder</p> genom att kombinera ihop mallinformationer till en relevant information, anpassad för det specifika fallet.</p>
+                <p>Patientbesked har använts sedan 2012 vid följande sjukhus:<br>Länssjukhuset i Kalmar, Hallands sjukhus, Skånes universitetssjukhus, Blekingesjukhuset och Centrallasarettet Växjö.</p>
+                <p>Under 2016 erhöll nära <span class='highlight'>9000</span> patienter information skapad med Patientbesked.</p>
+              {% endif %}
             </div>  
             <div class='right'>
-              <a class='imglink' data-target='.pbscreenshot'><div class='header'>Creating information</div><div class='image'><img src='/gfx/screenshots/pb1.jpg' /></div></a>
-              <a class='imglink' data-target='.pbscreenshot'><div class='header'>Generated information</div><div class='image'><img src='/gfx/screenshots/pb2.jpg' /></div></a>
-              <a class='imglink' data-target='.pbscreenshot'><div class='header'>Editing templates</div><div class='image'><img src='/gfx/screenshots/pb3.jpg' /></div></a>
+              {% if language == "en" %}
+                <a class='imglink' data-target='.pbscreenshot'><div class='header'>Creating information</div><div class='image'><img src='/gfx/screenshots/pb1.jpg' /></div></a>
+                <a class='imglink' data-target='.pbscreenshot'><div class='header'>Generated information</div><div class='image'><img src='/gfx/screenshots/pb2.jpg' /></div></a>
+                <a class='imglink' data-target='.pbscreenshot'><div class='header'>Editing templates</div><div class='image'><img src='/gfx/screenshots/pb3.jpg' /></div></a>
+              {% else %}
+                <a class='imglink' data-target='.pbscreenshot'><div class='header'>Skapa information</div><div class='image'><img src='/gfx/screenshots/pb1.jpg' /></div></a>
+                <a class='imglink' data-target='.pbscreenshot'><div class='header'>Skapad information</div><div class='image'><img src='/gfx/screenshots/pb2.jpg' /></div></a>
+                <a class='imglink' data-target='.pbscreenshot'><div class='header'>Redigera mallinformation</div><div class='image'><img src='/gfx/screenshots/pb3.jpg' /></div></a>
+              {% endif %}
             </div>
           </div>
           <div class='screenshot pbscreenshot'>

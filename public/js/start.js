@@ -41,6 +41,17 @@ function StartPage() {
       }, 500);      
     });
 
+    $("a.language").on("click", function(){
+      var lang = $(this).data("language");
+      ajax.post("/setlanguage", {language:lang}).then(
+        function() {
+          location.reload();
+        },
+        function(err) {
+          console.log(err);
+        }
+      );
+    });
   }
 
   init();
