@@ -173,7 +173,7 @@
               {% else %}
                 <p>Min vårdplan används för att skapa <span class='highlight'>individuella vårdplaner</span> till patienter som genomgår cancerbehandling. Vårdplaner kan skapas för utredningsfasen och behandlingsfasen och innehållet i vårdplanerna följer riktlinjerna som givits av SKL och RCC.</p>
                 <p>Applikationen baseras på den <span class='highlight'>mallfunktionalitet</span> som utvecklats för <a class='scroller' data-id='patientbesked'>Patientbesked</a> och medicinsk expertis vid varje klinkik skapar och underhåller mallinformationen. Informationen inkluderar bl.a. <span class='highlight'>medicinsk information</span>, olika kontaktinformation samt en <span class='highlight'>tidslinje</span> för den planerade behandlingen.</p>
-                <p>De skapade vårdplanerna är levande dokument och kan uppdateras när omständigheterna förändras. Patienten kan ta del av sin vårdplan online och också uppdatera de delear av innehållet som rör deras egen situation. Detta förser sjukvården med viktig information om patientens hälsosituation.</p>
+                <p>De skapade vårdplanerna är levande dokument och kan uppdateras när omständigheterna förändras. Patienten kan ta del av den akutuella versionen av sin vårdplan online och också uppdatera de delear av innehållet som rör deras egen situation. Detta förser sjukvården med viktig information om patientens hälsosituation.</p>
                 <p>Min vårdplan används för närvarande i ett pilotprojet vid Blekingesjukhuset. Initialt får alla kolorektalcancerpatienter vid sjukhuset vårdplaner genererade via Min vårdplan. Detta kommer efterhand att utökas även till andra cancerdiagnoser.</p>
               {% endif %}
             </div>  
@@ -201,7 +201,11 @@
     </div>
     <div class='background contact'>
       <div class='bgcontent'>
-        <div class='title'>Who we are</div>
+        {% if language == "en" %}
+          <div class='title'>Who we are</div>
+        {% else %}
+          <div class='title'>Vem vi är</div>
+        {% endif %}
         <div class='inner'>
           {% if language == "en" %}
             <h3>Please contact us for more information or for a demonstration of our applications.</h3>
