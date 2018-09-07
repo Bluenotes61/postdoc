@@ -30,7 +30,8 @@ app.use("/", express.static(__dirname + '/public'));
 app.use("/nodebase", express.static(__dirname + '/nodebase/public'));
 
 app.use(busboy());           
-app.use(bodyParser());    
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 app.use(cookieParser());  
 app.use(session.config);
 app.use(routes);
