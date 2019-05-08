@@ -1,37 +1,28 @@
 /**
  * Start module for the application
  * @module server/app
- */  
-                                      
-var express = require('express');  
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-var busboy = require('connect-busboy');  
-var swig = require("swig");
-var routes = require("./nodebase/middleware/routes.js");  
-var session = require("./nodebase/helpers/sessions.js");
-var config = require("./config.js");  
-var path = require('path');  
+ */
+var express = require('express')
+var bodyParser = require('body-parser')
+var swig = require('swig')
+var routes = require('./routes.js')
+var config = require('./config.js')
+var session = require('./helpers/sessions.js')
 
-var app = express();     
-  
-var server = app.listen(config.serverport, function() {
-  console.log('Listening on port %d', server.address().port);
-});      
+var app = express()
 
-global.appRoot = path.resolve(__dirname);
+var server = app.listen(config.serverport, function () {
+  console.log('Listening on port %d', server.address().port)
+})
 
-swig.setDefaults({ autoescape: false });  
-app.disable('x-powered-by');
-app.engine("html", swig.renderFile);
-app.set('view engine', 'html');
-app.set('views', __dirname + '/routes');  
-app.use("/", express.static(__dirname + '/public'));
-app.use("/nodebase", express.static(__dirname + '/nodebase/public'));
+swig.setDefaults({ autoescape: false })
+app.disable('x-powered-by')
+app.engine('html', swig.renderFile)
+app.set('view engine', 'html')
+app.set('views', __dirname + '/routes')
+app.use('/', express.static(__dirname + '/public'))
 
-app.use(busboy());           
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json());
-app.use(cookieParser());  
-app.use(session.config);
-app.use(routes);
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+app.use(session.config)
+app.use(routes)

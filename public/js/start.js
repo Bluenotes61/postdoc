@@ -1,62 +1,60 @@
-function StartPage() {
-  
-  function init() {
-    $(document).on("scroll", function(){
-      if ($(this).scrollTop() > 100)
-        $(".topbar").addClass("small");
-      else
-        $(".topbar").removeClass("small");
-    });
+/* global $, ajax, location, jQuery */
 
-    $(".topitems .hamburger").on("click", function(){
-      $(".topitems .hamburgeritems").slideToggle();
-    });
+jQuery(document).ready(function () {
+  function init () {
+    $(document).on('scroll', function () {
+      if ($(this).scrollTop() > 100) {
+        $('.topbar').addClass('small')
+      } else {
+        $('.topbar').removeClass('small')
+      }
+    })
 
-    $("a.scroller").on("click", function(){
-      var id = $(this).data("id");
+    $('.topitems .hamburger').on('click', function () {
+      $('.topitems .hamburgeritems').slideToggle()
+    })
+
+    $('a.scroller').on('click', function () {
+      var id = $(this).data('id')
       $('html, body').animate({
-        scrollTop: $("." + id).offset().top
-      }, 1000);      
-      $(".topitems .hamburgeritems").slideUp();
-    });
+        scrollTop: $('.' + id).offset().top
+      }, 1000)
+      $('.topitems .hamburgeritems').slideUp()
+    })
 
-    $("a.imglink").on("click", function(){
-      var src = $(this).find("img").attr("src");
-      var target = $(this).data("target");
-      var header = $(this).find(".header").text();
-      $(target).find("img").attr("src", src);
-      $(target).find(".header").text(header);
-      $(target).slideDown(function(){
+    $('a.imglink').on('click', function () {
+      var src = $(this).find('img').attr('src')
+      var target = $(this).data('target')
+      var header = $(this).find('.header').text()
+      $(target).find('img').attr('src', src)
+      $(target).find('.header').text(header)
+      $(target).slideDown(function () {
         $('html, body').animate({
           scrollTop: $(target).offset().top - 80
-        }, 500);      
-      });
-    });
+        }, 500)
+      })
+    })
 
-    $(".screenshot").on("click", function(){
-      var bg = $(this).parents(".background");
-      $(this).slideUp();
+    $('.screenshot').on('click', function () {
+      var bg = $(this).parents('.background')
+      $(this).slideUp()
       $('html, body').animate({
         scrollTop: bg.offset().top
-      }, 500);      
-    });
+      }, 500)
+    })
 
-    $("a.language").on("click", function(){
-      var lang = $(this).data("language");
-      ajax.post("/setlanguage", {language:lang}).then(
-        function() {
-          location.reload();
+    $('a.language').on('click', function () {
+      var lang = $(this).data('language')
+      ajax.post('/setlanguage', { language: lang }).then(
+        function () {
+          location.reload()
         },
-        function(err) {
-          console.log(err);
+        function (err) {
+          console.log(err)
         }
-      );
-    });
+      )
+    })
   }
 
-  init();
-}
-
-jQuery(document).ready(function() {
-  new StartPage;
-});
+  init()
+})
